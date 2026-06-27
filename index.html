@@ -1,125 +1,170 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Happy Birthday Shirlie</title>
 
 <style>
-
 body{
+    margin:0;
+    background:#f4eee2;
+    font-family: Georgia, serif;
+    overflow-x:hidden;
+}
 
- margin:0;
+.hidden{
+    display:none;
+}
 
- height:100vh;
-
- display:flex;
-
- justify-content:center;
-
- align-items:center;
-
- background:#f5eee1;
-
- font-family:Georgia, serif;
-
+#coverPage{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition: all 1.5s ease;
 }
 
 .card{
-
- width:85%;
-
- max-width:420px;
-
- min-height:620px;
-
- background:#fbf5e9;
-
- border:3px solid #c9a96e;
-
- border-radius:18px;
-
- box-shadow:0 8px 30px rgba(0,0,0,.18);
-
- display:flex;
-
- flex-direction:column;
-
- justify-content:space-between;
-
- padding:35px 20px;
-
- text-align:center;
-
+    width:85%;
+    max-width:500px;
+    min-height:650px;
+    background:#fbf5e9;
+    border:3px solid #c9a96e;
+    border-radius:20px;
+    box-shadow:0 8px 30px rgba(0,0,0,.18);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:40px 25px;
+    text-align:center;
+    cursor:pointer;
 }
 
 .top{
-
- font-size:42px;
-
- font-style:italic;
-
- color:#5b4636;
-
+    font-size:52px;
+    font-style:italic;
+    color:#5b4636;
 }
 
 .name{
-
- font-size:54px;
-
- margin-top:10px;
-
- color:#3d2d22;
-
+    font-size:68px;
+    color:#3d2d22;
 }
 
 .bird{
-
- font-size:120px;
-
- margin:20px 0;
-
+    font-size:140px;
+    margin:20px 0;
 }
 
 .bottom{
-
- font-size:18px;
-
- color:#6c5b4b;
-
+    font-size:18px;
+    color:#6c5b4b;
 }
 
-</style>
+.fadeOut{
+    opacity:0;
+    transform:translateX(-150px);
+}
 
+#insideCard{
+    min-height:100vh;
+    padding:30px;
+    background:#f8f1e5;
+}
+
+.spread{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.page{
+    flex:1;
+    min-width:300px;
+    background:#fbf5e9;
+    border:2px solid #d4b483;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+
+.page p{
+    font-size:20px;
+    line-height:1.7;
+    opacity:0;
+    transition:opacity 2s ease;
+}
+
+.show{
+    opacity:1 !important;
+}
+
+.signature{
+    margin-top:40px;
+    font-size:28px;
+    font-style:italic;
+}
+</style>
 </head>
 
 <body>
 
-<div class="card">
+<div id="coverPage">
+    <div class="card" onclick="openCard()">
+        <div>
+            <div class="top">Happy Birthday</div>
+            <div class="name">Shirlie</div>
+        </div>
 
-  <div>
+        <div class="bird">🐦</div>
 
-    <div class="top">Happy Birthday</div>
-
-    <div class="name">Shirlie</div>
-
-  </div>
-
-  <div class="bird">🐦</div>
-
-  <div class="bottom">
-
-    Tap anywhere to open your card<br>
-
-    and begin music
-
-  </div>
-
+        <div class="bottom">
+            Tap anywhere to open your card<br>
+            and begin music
+        </div>
+    </div>
 </div>
 
-</body>
+<div id="insideCard" class="hidden">
+    <div class="spread">
+        <div class="page">
+            <p id="p1">When I think of you, I think of a beautiful bird—never meant to be caged, always following your own flight.</p>
 
+            <p id="p2">You have always lived life on your own terms. You traveled where your heart led you, loved deeply, and allowed yourself to be deeply loved in return.</p>
+
+            <p id="p3">As you know, people often told me, “You’re just like your Aunt Shirlie.” Sometimes they didn’t mean it as a compliment—but I always secretly hoped they were right.</p>
+        </div>
+
+        <div class="page">
+            <p id="p4">In so many ways, I am your mini me, and I wear that proudly.</p>
+
+            <p id="p5">I want you to know how much I love you and have always looked up to you for as long as I can remember.</p>
+
+            <p id="p6">I can’t wait to see you. It’s going to be a long three weeks because I can’t wait to hug your neck.</p>
+
+            <div class="signature">Love always,<br>Nancy</div>
+        </div>
+    </div>
+</div>
+
+<script>
+function openCard(){
+    document.getElementById("coverPage").classList.add("fadeOut");
+
+    setTimeout(() => {
+        document.getElementById("coverPage").style.display="none";
+        document.getElementById("insideCard").classList.remove("hidden");
+    }, 1400);
+
+    setTimeout(()=>document.getElementById("p1").classList.add("show"), 2500);
+    setTimeout(()=>document.getElementById("p2").classList.add("show"), 5000);
+    setTimeout(()=>document.getElementById("p3").classList.add("show"), 8000);
+    setTimeout(()=>document.getElementById("p4").classList.add("show"), 11000);
+    setTimeout(()=>document.getElementById("p5").classList.add("show"), 14000);
+    setTimeout(()=>document.getElementById("p6").classList.add("show"), 17000);
+}
+</script>
+
+</body>
 </html>
