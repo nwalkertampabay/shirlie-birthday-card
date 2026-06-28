@@ -6,8 +6,43 @@
 <title>Happy Birthday Shirlie</title>
 
 <style>
+#dedicationScreen{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f8f1e5;
+    z-index:1000;
+}
+
+.dedicationText{
+    text-align:center;
+    font-size:42px;
+    font-style:italic;
+    color:#5b4636;
+    line-height:1.5;
+}
+
+.dedicationText span{
+    font-size:30px;
+}
+
+#feather{
+    position:absolute;
+    top:10%;
+    right:20%;
+    font-size:48px;
+    animation: drift 5s ease-in-out forwards;
+}
+
+@keyframes drift {
+    0% { transform: translateY(0) rotate(0deg); opacity:0; }
+    20% { opacity:1; }
+    100% { transform: translateY(450px) translateX(-120px) rotate(35deg); opacity:0; }
+}
 body{
-    margin:0;
+margin:0;
     background:#f4eee2;
     font-family: Georgia, serif;
     overflow-x:hidden;
@@ -119,7 +154,13 @@ body{
 
     </div>
 </div>
-
+<div id="dedicationScreen" class="hidden">
+    <div class="dedicationText">
+        For my Aunt Shirlie, with love…<br>
+        <span>— Nancy</span>
+    </div>
+    <div id="feather">🪶</div>
+</div>
 <div id="insideCard" class="hidden">
     <div class="spread">
         <div class="page">
