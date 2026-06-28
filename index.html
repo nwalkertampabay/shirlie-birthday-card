@@ -144,8 +144,22 @@ body{
 <audio id="voiceAudio">
     <source src="Voice.m4a" type="audio/mp4">
 </audio>
+
+<audio id="musicAudio" loop>
+    <source src="Music.mp3" type="audio/mpeg">
+</audio>
 <script>
-function openCard(){
+
+   function openCard(){
+    const music = document.getElementById("musicAudio");
+    music.volume = 0.18;
+    music.play();
+setTimeout(() => {
+    const music = document.getElementById("musicAudio");
+    if (music) {
+        music.volume = 0.30;
+    }
+}, 15000);
     document.getElementById("voiceAudio").play();
     document.getElementById("coverPage").classList.add("fadeOut");
 
