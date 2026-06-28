@@ -6,51 +6,7 @@
 <title>Happy Birthday Shirlie</title>
 
 <style>
-#dedicationScreen{
-    position:fixed;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#f8f1e5;
-    z-index:1000;
-}
 
-.dedicationText{
-    text-align:center;
-    font-size:42px;
-    font-style:italic;
-    color:#5b4636;
-    line-height:1.5;
-}
-
-.dedicationText span{
-    font-size:30px;
-}
-
-#feather{
-    position:absolute;
-    top:10%;
-    right:20%;
-    font-size:48px;
-    animation: drift 5s ease-in-out forwards;
-}
-
-@keyframes drift {
-    0% { transform: translateY(0) rotate(0deg); opacity:0; }
-    20% { opacity:1; }
-    100% { transform: translateY(450px) translateX(-120px) rotate(35deg); opacity:0; }
-}
-body{
-margin:0;
-    background:#f4eee2;
-    font-family: Georgia, serif;
-    overflow-x:hidden;
-}
-
-.hidden{
-    display:none;
-}
 
 #coverPage{
     height:100vh;
@@ -183,36 +139,33 @@ margin:0;
     <source src="Music.mp3" type="audio/mpeg">
 </audio>
 <script>
-
-   function openCard(){
+<script>
+function openCard(){
     const music = document.getElementById("musicAudio");
     music.volume = 0.25;
     music.play();
-setTimeout(() => {
-    const music = document.getElementById("musicAudio");
-    if (music) {
-        music.volume = 0.30;
-    }
-}, 15000);
-   
+
+    setTimeout(() => {
+        if (music) {
+            music.volume = 0.30;
+        }
+    }, 15000);
+
     document.getElementById("coverPage").classList.add("fadeOut");
 
     setTimeout(() => {
-    document.getElementById("coverPage").style.display="none";
-    document.getElementById("dedicationScreen").classList.remove("hidden");
-}, 1400);
+        document.getElementById("coverPage").style.display="none";
+        document.getElementById("insideCard").classList.remove("hidden");
+    }, 1400);
 
-setTimeout(() => {
-    document.getElementById("dedicationScreen").style.display="none";
-    document.getElementById("insideCard").classList.remove("hidden");
-}, 4200);
-    setTimeout(()=>document.getElementById("p1").classList.add("show"), 5200);
-    setTimeout(()=>document.getElementById("p2").classList.add("show"), 7700);
-    setTimeout(()=>document.getElementById("p3").classList.add("show"), 10700);
-    setTimeout(()=>document.getElementById("p4").classList.add("show"), 13700);
-    setTimeout(()=>document.getElementById("p5").classList.add("show"), 16700);
-    setTimeout(()=>document.getElementById("p6").classList.add("show"), 19700);
+    setTimeout(()=>document.getElementById("p1").classList.add("show"), 2500);
+    setTimeout(()=>document.getElementById("p2").classList.add("show"), 5000);
+    setTimeout(()=>document.getElementById("p3").classList.add("show"), 8000);
+    setTimeout(()=>document.getElementById("p4").classList.add("show"), 11000);
+    setTimeout(()=>document.getElementById("p5").classList.add("show"), 14000);
+    setTimeout(()=>document.getElementById("p6").classList.add("show"), 17000);
 }
+</script>
 </script>
 
 </body>
