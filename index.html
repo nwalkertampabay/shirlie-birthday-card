@@ -203,10 +203,14 @@ setTimeout(() => {
     document.getElementById("coverPage").classList.add("fadeOut");
 
     setTimeout(() => {
-        document.getElementById("coverPage").style.display="none";
-        document.getElementById("insideCard").classList.remove("hidden");
-    }, 1400);
+    document.getElementById("coverPage").style.display="none";
+    document.getElementById("dedicationScreen").classList.remove("hidden");
+}, 1400);
 
+setTimeout(() => {
+    document.getElementById("dedicationScreen").style.display="none";
+    document.getElementById("insideCard").classList.remove("hidden");
+}, 4200);
     setTimeout(()=>document.getElementById("p1").classList.add("show"), 2500);
     setTimeout(()=>document.getElementById("p2").classList.add("show"), 5000);
     setTimeout(()=>document.getElementById("p3").classList.add("show"), 8000);
